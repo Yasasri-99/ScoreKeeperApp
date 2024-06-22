@@ -47,11 +47,24 @@
             </div>
 
         )
+
+        const Results =()=>(
+            <div>
+                {ballWiseRes.map((res,index)  =>  (
+                    <>
+                    {index %6 ===0 ? <br/> : null}
+                    <span key={index}>{res === 0? <strong>.</strong> : res}</span>&nbsp;
+                    </>
+                ))}
+            </div>
+
+        )
         const App = () => (
         <>
             <h1>SCORE KEEPER</h1>
             <h2>SCORE : {score}/{wicket}</h2>
             <ScoreButtons/>
+            <Results/>
         </>
         )
 
