@@ -45,7 +45,12 @@ function handleSubmit(event) {
   } else {
     score += hit;
   }
-  ballWiseRes.unshift(hit);
+  ballWiseRes.unshift(
+    // <span>{hit}{","}{inputRef.current.value}</span>
+    <span>{`${hit},${inputRef.current.value}`}</span>
+  );
+  hit = 0;
+  inputRef.current.value = "";
   console.log(inputRef.current.value);
   rootElement.render(<App />);
 }
